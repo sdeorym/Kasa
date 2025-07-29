@@ -1,5 +1,5 @@
 import '@styles/Home.css';
-//import '@styles/About.css';
+import '@styles/About.css';
 
 
 function Banner() {
