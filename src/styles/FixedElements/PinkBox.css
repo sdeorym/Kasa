@@ -33,6 +33,30 @@
     /*margin-bottom: -5px;*/
 }
 
+@keyframes counter-clockwise {
+    0% { 
+        transform: rotate(0deg); 
+    } 50% { 
+            transform: rotate(-90deg); 
+    } 100% { 
+        transform: rotate(-180deg); }
+}
+.ccw-turning {
+    animation: counter-clockwise 3s ease forwards;
+}
+
+@keyframes clockwise {
+    0% { 
+        transform: rotate(0deg); 
+    } 50% { 
+            transform: rotate(90deg); 
+    } 100% { 
+        transform: rotate(180deg); }
+}
+.cw-turning {
+    animation: clockwise 2s ease forwards;
+}
+
 @media (min-width: 767px) {
     .pinky {
         height: 54px;
