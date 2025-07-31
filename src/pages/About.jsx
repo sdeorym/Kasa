@@ -1,4 +1,4 @@
-import Banner from '@components/general/Banner.jsx';
+import Banner from '@components/about/Banner.jsx';
 import Values from '@components/about/Values.jsx'
 import '@styles/About.css';
 
@@ -28,7 +28,7 @@ function About() {
       <Banner />
       <div className="kasaValues">
         {values.map((e) => 
-          <Values id={e.id} title={e.title} description={e.description}/>)}
+          <Values id={e.id} title={e.title} description={e.description} />)}
       </div>
     </section>
   );

@@ -1,15 +1,10 @@
 import '@styles/Home.css';
+import Banner from '@components/home/Banner.jsx';
 import Card from '@components/home/Card.jsx';
-import Banner from '@components/general/Banner.jsx';
 import Logements from '@assets/data/logements.js';
 import { useState, useEffect } from 'react';
 
 function Home() {
-  /*let tits =[];
-  Logements.forEach((miKasa) => {
-    if (!tits.includes(miKasa.title)) {
-      tits.push(miKasa.title);}})
-  console.log("Estamos en home", tits);*/
   const kasaCards = [0, 1, 2];
   const kasaLots = [0, 1];
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

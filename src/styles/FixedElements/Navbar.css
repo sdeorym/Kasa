@@ -28,7 +28,7 @@
     text-decoration: none;
     color: #000;
 }
-.navlinks:hover {
+.navlinks:hover, .navlinks:active {
     text-decoration: underline;
 }
 

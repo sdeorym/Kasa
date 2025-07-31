@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'; // ✅ Esto soluciona el error
+import path from 'path'; // For routing issues
 
 // https://vite.dev/config/
 export default defineConfig({

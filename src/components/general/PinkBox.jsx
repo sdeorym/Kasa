@@ -1,12 +1,13 @@
-import '@styles/About.css';
-import arrow from '@assets/LogosAndImages/arrow.png';
+import '@styles/FixedElements/PinkBox.css';
+import ArrowButton from '@components/general/ArrowButton.jsx';
 
 function PinkBox({title}) {
+   
     return(
         <div className="pinky">        
             <span className="arrowy">
                 <h2>{title}</h2>
-                <img src={arrow} alt='Flèche' className="arrow"></img>
+                <span className="arrowMe"><ArrowButton /></span>
             </span>
         </div>
     )
