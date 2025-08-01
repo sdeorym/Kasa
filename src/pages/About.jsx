@@ -1,6 +1,5 @@
 import Banner from '@components/about/Banner.jsx';
-import Values from '@components/about/Values.jsx'
-import '@styles/About.css';
+import Values from '@components/about/Values.jsx';
 
 
 function About() {
