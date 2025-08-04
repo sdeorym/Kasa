@@ -3,8 +3,15 @@
     height: 90%;
     margin-top: 5px;  
 }
-.pinky {
+.extendable {
     width: 92.5%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.pinky {
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     padding: 0px 10px 0px 10px;
@@ -30,13 +37,11 @@
 .arrowMe {
     width: 32px;
     height: 32px;
-    /*margin-bottom: -5px;*/
 }
 .canvas {
-    display: none;
     height: auto;
-    width: 92.5%;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
 }
 .canvas p {
     color: #000;
@@ -45,42 +50,41 @@
     font-style: normal;
     font-weight: 400;
     line-height: 142.6%; /* 25.668px */
+    
 }
+
+/**************************************** ANIMATIONS ****************************************/
+    /*** ARROWS TURNING UP & DOWN ***/
 @keyframes counter-clockwise {
-    0% { 
+    from { 
         transform: rotate(0deg); 
-    } 50% { 
-            transform: rotate(-90deg); 
-    } 100% { 
+    } to { 
         transform: rotate(-180deg); }
 }
 .ccw-turning {
-    animation: counter-clockwise 2s ease-in forwards;
+    animation: counter-clockwise 1s ease-in-out forwards;
 }
-
 @keyframes clockwise {
-    0% { 
+    from { 
         transform: rotate(-180deg); 
-    } 50% { 
-            transform: rotate(-90deg); 
-    } 100% { 
+    } to { 
         transform: rotate(0deg); }
 }
 .cw-turning {
-    animation: clockwise 2s ease-in forwards;
+    animation: clockwise 1s ease-in-out forwards;
 }
-
+    /*** BOX OPENS, TEXT APPEARS ***/
 @keyframes describe {
-    0% {
-        transform: translateX(0%);
+    from {
+        transform: translateY(0%);
         opacity: 0;
-    } 100% {
+    } to {
         transform: translateY(100%);
         opacity: 1;
     }
 }
 .describing {
-    animation: describe 1s ease-in forwards;
+    animation: describe 5s ease-in-out forwards;
 }
 @keyframes contract {
     from {
@@ -92,8 +96,22 @@
     }
 }
 .contracting {
-    animation: contract 1s ease-in forwards;
+    animation: contract 1s ease-in-out forwards;
 }
+@keyframes slippingDown {
+        from {
+        transform: translateY(100%);
+        opacity: 1;
+    } to {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+}
+.dropDown {
+    animation: slippingDown 7.5s ease-in-out 5s forwards;
+}
+
+/**************************************** MEDIA QUERIES ****************************************/
 
 @media (min-width: 767px) {
     .pinky {
@@ -106,5 +124,9 @@
         font-size: 24px;
         margin-top: -1.5px;
     }
-
+    .canvas p {
+        font-size: 18px;
+    }
 }
+
+/* cubic-bezier(1, 0.25, 0.8, 0.25) */

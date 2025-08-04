@@ -2,19 +2,16 @@ import arrow from '@assets/LogosAndImages/arrow.png';
 import '@styles/FixedElements/PinkBox.css';
 import { useState, useEffect } from 'react';
 
-function ArrowButton() {
+function ArrowButton( {rotation, setRotation} ) {
     //Hay que mandar rotation como prop state al padre comun, que es PinkBox, para que funcione ahí.
     const [clicked, setClicked] = useState(false);
-    const [arrowPosition, setArrowPosition] = useState(false);    
-    const [rotation, setRotation]=useState("arrow");    
-
+    const [arrowPosition, setArrowPosition] = useState(false);
     const handleClick = () => {
         setClicked(true);        
     };
     
     useEffect(() => {
         if (!clicked) return;
-
         function arrowAnim() {        
             if (arrowPosition == false) {                
                 setArrowPosition(true);

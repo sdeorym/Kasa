@@ -1,20 +1,22 @@
 import '@styles/FixedElements/PinkBox.css';
+import { useState } from 'react';
 
-function Accordion({rotation, title, description}) {
-    let sheet = "canvas";
+function Accordion({rotation, title, description, canvasing, setCanvas}) {
+    const [textual, setTextual] = useState("");
     if (rotation == "arrow" || rotation == "arrow cw-turning") {
-        sheet="canvas contracting";
-        console.log({rotation});
+        setCanvas = "canvas contracting";
+        setTextual = "";
         return;
     } else {
-        console.log({rotation});
-        sheet="canvas describing";
+        setCanvas = "canvas describing";
+        setTextual = "dropDown";
+        return;
     }
 
     return(
         <>
-            <div className={sheet}>
-                <p>{description}</p>
+            <div className={canvasing}>
+                <p className={textual}>{description}</p>
             </div>
         </>
     )
