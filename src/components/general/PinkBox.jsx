@@ -1,21 +1,21 @@
 import '@styles/FixedElements/PinkBox.css';
 import ArrowButton from '@components/general/ArrowButton.jsx';
-import Accordion from '@components/general/Accordion.jsx';
-import { useState, useEffect } from 'react';
+import CanvasAccordion from '@components/general/CanvasAccordion.jsx';
+import { useState } from 'react';
 
 function PinkBox({title, description}) {
-    const [rotation, setRotation] = useState("arrow");
-    const [canvasing, setCanvas] = useState(""); 
+    const [clicked, setClicked] = useState(false);
+    const [animPosition, setAnimPosition] = useState(false);
 
     return(
         <div className="extendable"> 
             <span className="pinky">        
                 <span className="arrowy">
                     <h2>{title}</h2>
-                    <span className="arrowMe"><ArrowButton rotation={rotation} setRotation={setRotation} /></span>
+                    <span className="arrowMe"><ArrowButton animPosition={animPosition} setAnimPosition={setAnimPosition} clicked={clicked} setClicked={setClicked} /></span>
                 </span>            
             </span>
-            <span className={canvasing}><Accordion title={title} description={description} rotation={rotation} /></span>
+            <span id="monAccordion"><CanvasAccordion title={title} description={description} clicked={clicked} animPosition={animPosition} /></span>
         </div>
         )
 }
