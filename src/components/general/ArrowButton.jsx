@@ -3,11 +3,11 @@ import '@styles/FixedElements/PinkBox.css';
 import { useState, useEffect } from 'react';
 
 function ArrowButton( {animPosition, setAnimPosition, clicked, setClicked}) {
-    //Hay que mandar rotation como prop state al padre comun, que es PinkBox, para que funcione ahí.
+    //Hay que mandar rotation como prop state al padre común, que es PinkBox, para que funcione ahí.
 
     const [rotation, useRotation] = useState("arrow");
     const handleClick = () => {
-        setClicked(true);        
+        setClicked(true);
     };
     
     useEffect(() => {
@@ -20,14 +20,14 @@ function ArrowButton( {animPosition, setAnimPosition, clicked, setClicked}) {
             } else if (animPosition == true) {
                 setAnimPosition(false);
                 useRotation("arrow cw-turning");
-                setClicked(false);
+                setClicked(false);                
             }
         }    
-        arrowAnim();
+        arrowAnim();        
     },[clicked]);
     return(
         <>
-            <img src={arrow} onClick={handleClick} className={rotation}></img>
+            
         </>
     )
 }

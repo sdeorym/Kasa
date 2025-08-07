@@ -41,90 +41,122 @@
 .canvas {
     width: 100%;
     height: auto;
-    /*display: block;*/
+    padding: 15px;
+    display: none;    
 }
-/*.canvas-nonvisible {
-    width: 100%;
-    display: none;
+/*.canvas:closed {
+    height: 0;
+    display:none;
 }*/
-.canvas p {
+.canvastext {
     color: #000;
     font-family: Montserrat;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 142.6%; /* 25.668px */
-    padding: 12px;    
+    display: none;
 }
 .extendable {
     height: auto;
 }
 
 /**************************************** ANIMATIONS ****************************************/
-    /*** ARROWS TURNING UP & DOWN ***/
-@keyframes counter-clockwise {
-    from { 
-        transform: rotate(0deg); 
-    } to { 
-        transform: rotate(-180deg); }
-}
-.ccw-turning {
-    animation: counter-clockwise 1s ease-in-out forwards;
-}
-@keyframes clockwise {
-    from { 
-        transform: rotate(-180deg); 
-    } to { 
-        transform: rotate(0deg); }
-}
-.cw-turning {
-    animation: clockwise 1s ease-in-out forwards;
-}
     /*** BOX OPENS, TEXT APPEARS ***/
-@keyframes opening {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    } to {
-        transform: translateY(auto - 5px);
-        opacity: 1;
-    }
+.displayAnim {
+    animation: counter-clockwise 1s ease-in-out forwards;        
 }
-.openCanvas {
+    @keyframes counter-clockwise {
+        from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(-180deg);             
+        }        
+    }
+.canvas.displayAnim {
+    display: block;
+    animation: opening 1s ease-in-out forwards;
+}    
+    @keyframes opening {
+        from {
+            display: none;
+            transform: translateY(0px);
+            opacity: 0;
+        } to {
+            display: block;
+            transform: translateY(auto);
+            opacity: 1;
+        }
+    }
+.canvastext.displayAnim{
+    display: block;
+    animation: tumble 1s ease-in-out forwards;
+}    
+    @keyframes tumble {
+        from {
+            display: none;
+            opacity: 0;
+        } to {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+.hideAnim {
+    animation: clockwise 1s ease-in-out forwards;        
+}
+    @keyframes clockwise {
+        from { 
+            transform: rotate(-180deg); 
+        } to { 
+            transform: rotate(0deg); }
+    }
+.canvas.hideAnim  {
+    animation: shutting 1s ease-in-out forwards;
+    display: none;
+}
+    @keyframes shutting {
+        from {
+            display: block;
+            transform: translateY(auto);
+            opacity: 1;
+        } to {
+            display: none;
+            transform: translateY(0px);
+            opacity: 0;           
+        }
+    }
+.canvastext.hideAnim  {
+    animation: mount 1s ease-in-out forwards;
+    display: none;
+}
+    @keyframes mount {
+        from {
+            display: block;
+            opacity: 1;
+        } to {
+            display: none;
+            opacity: 0;
+        }
+    }
+
+
+
+/*.openCanvas {
     animation: opening ease-in-out forwards;
 }
-@keyframes shutting {
-    from {
-        transform: translateY(-5px);
-        opacity: 1;
-    } to {
-        transform: translateY(auto);
-        opacity: 0;
-    }
-}
+
 .shutCanvas {
     animation: shutting ease-in-out forwards;
 }
-@keyframes tumble {
-    from {
-        opacity: 0;
-    } to {
-        opacity: 1;
-    }
-}
+
 .dropDown {
     animation: tumble ease-in-out forwards;
 }
-@keyframes mount {
-    from {
-        opacity: 1;
-    } to {
-        opacity: 0;
-    }
-}
+
 .climbUp {
     animation: mount ease-in-out forwards;
-}
+}*/
 
 /**************************************** MEDIA QUERIES ****************************************/
 
