@@ -6,6 +6,14 @@ import '@styles/lodging.css';
 function Lodging() {
 
 
+  // Récupérer l'id via un useParams
+
+  // Utiliser la méthode "find" sur le tableau JSON pour trouver la bonne entrée. 
+  // Hint : utiliser un useEffect pour gérer le changement d'id
+
+
+
+
   return (
     <>
       <Navbar />

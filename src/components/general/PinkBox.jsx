@@ -4,29 +4,52 @@ import CanvasAccordion from '@components/general/CanvasAccordion.jsx';
 import { useState, useEffect } from 'react';
 
 function PinkBox({title, description}) {
-    const [clicked, setClicked] = useState(false);
-    const [animPosition, setAnimPosition] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const [animKind, setAnimKind] = useState("hideAnim");
-    const [timeOut, setTimeOut] = useState();
-    const handleClick = () => {
-        setClicked(true);
-    };        
+    // const [animPosition, setAnimPosition] = useState(false);
+    // const [animKind, setAnimKind] = useState("");
+    // const [timeOut, setTimeOut] = useState();
+
+
+    // useEffect(() => {
+    //     // traitement ne se déclenche que si animPosition change
+    //     animKind = animPosition ? "displayAnim" : "hideAnim";
+    // }, [animPosition]);
+
     useEffect(() => {
-        if (!clicked) return;
-        function arrowAnim() {        
-            if (animPosition == false) {
-                setAnimPosition(true);
-                setAnimKind("displayAnim");
-            } else if (animPosition == true) {
-                setAnimPosition(false);
-                setAnimKind("hideAnim");
-            }
-            let timer=setTimeOut(setClicked(false));
-            console.log(clicked);
+        /* if (!clicked) return; // ICI Première execution on s'arrête
+        // function arrowAnim() {        
+        //     if (animPosition == false) { // Si animPosition = false === si Clicked === false
+        //         setAnimPosition(true);   // ICI
+        //         // setAnimKind("displayAnim");
+        //         console.log(animPosition);
+        //     } else if (animPosition == true) { // Si animPostion == True ==== si clicked === true
+        //         setAnimPosition(false);
+        //         // setAnimKind("hideAnim");
+        //         console.log(animPosition);
+        //     }
+        //     let timer=setTimeOut(setClicked(false));
+        //     console.log(clicked);
+        // }
+        // arrowAnim();  */         
+                
+        if (!isOpen) {
+            setAnimKind("hideAnim");
+            console.log("hideAnim", title);
         }
-        arrowAnim();            
-    },[clicked]);
-    
+
+        if (isOpen) {
+            setAnimKind("displayAnim");
+            console.log("displayAnim", title);
+        }
+
+    },[isOpen]);
+    console.log("before return ", title, animKind);
+
+    const handleClick = () => {
+        setIsOpen(!isOpen)
+    };
+
     return(
         <>
             <div className="extendable"> 
