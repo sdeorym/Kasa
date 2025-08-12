@@ -1,9 +1,10 @@
 import '@styles/Lodging.css';
 
-function Title({id, title}) {
+function Title({flatTitle}) {
+
     return(
         <>
-            <h2 className="lodgingTitle">Nombre del piso</h2>
+            <h2 className="lodgingTitle">{flatTitle}</h2>
         </>
     )
 }

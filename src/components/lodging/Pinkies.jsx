@@ -1,6 +1,6 @@
 import '@styles/Lodging.css';
 
-function Pinkies({id, title}) {
+function Pinkies() {
     return(
         <>
             <span className="pinkyBoxy">Pink 1</span>

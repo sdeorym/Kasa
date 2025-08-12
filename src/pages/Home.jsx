@@ -3,7 +3,7 @@ import Banner from '@components/home/Banner.jsx';
 import Card from '@components/home/Card.jsx';
 import Logements from '@assets/data/logements.js';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Home() {
 
@@ -20,6 +20,12 @@ function Home() {
 
     // Cleaning Up
     return () => window.removeEventListener('resize', handleResize);}, []);
+  
+  let experimento = 
+    Logements.map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => {title});
+  console.log("experimento = ", experimento);
+
+
 
   return (
     <section className="homecoming">
@@ -30,7 +36,7 @@ function Home() {
                 <div className="firstAdds">                  
                     {kasaCards.slice(0, 1).flatMap((_,flatNumber) =>
                     Logements.slice(rowNumber*3, (rowNumber*3+(flatNumber+3))).map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => (
-                      <Link to={`@pages/lodging/:${id}`} className="myLink" id={id} title={title} ><Card key={`card-${rowNumber}-${flatNumber}-${i}`} title={title} /></Link>)
+                      <Link to={`@pages/lodging/:${id}`} className="myLink"><Card title={title} /></Link>)
                       ))}
                 </div>
             ))}
@@ -39,7 +45,9 @@ function Home() {
         <div className="firstAdds">
           {kasaCards.slice(0, 1).flatMap((_,flatNumber) =>
             Logements.slice(0, 3).map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => (
-              <Link to={`lodging/:${id}`} className="myLink" id={id} title={title} ><Card key={`plainCard-${flatNumber}-${Logements.title}`} title={title} /></Link>)))}
+              <Link to={`lodging/:${id}`} className="myLink">
+                <Card title={title} />
+              </Link>)))}
         </div>
       }
     </section>

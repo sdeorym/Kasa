@@ -6,43 +6,16 @@ import { useState, useEffect } from 'react';
 function PinkBox({title, description}) {
     const [isOpen, setIsOpen] = useState(false);
     const [animKind, setAnimKind] = useState("hideAnim");
-    // const [animPosition, setAnimPosition] = useState(false);
-    // const [animKind, setAnimKind] = useState("");
-    // const [timeOut, setTimeOut] = useState();
 
-
-    // useEffect(() => {
-    //     // traitement ne se déclenche que si animPosition change
-    //     animKind = animPosition ? "displayAnim" : "hideAnim";
-    // }, [animPosition]);
-
-    useEffect(() => {
-        /* if (!clicked) return; // ICI Première execution on s'arrête
-        // function arrowAnim() {        
-        //     if (animPosition == false) { // Si animPosition = false === si Clicked === false
-        //         setAnimPosition(true);   // ICI
-        //         // setAnimKind("displayAnim");
-        //         console.log(animPosition);
-        //     } else if (animPosition == true) { // Si animPostion == True ==== si clicked === true
-        //         setAnimPosition(false);
-        //         // setAnimKind("hideAnim");
-        //         console.log(animPosition);
-        //     }
-        //     let timer=setTimeOut(setClicked(false));
-        //     console.log(clicked);
-        // }
-        // arrowAnim();  */         
-                
+    useEffect(() => {                
         if (!isOpen) {
             setAnimKind("hideAnim");
             console.log("hideAnim", title);
         }
-
         if (isOpen) {
             setAnimKind("displayAnim");
             console.log("displayAnim", title);
         }
-
     },[isOpen]);
     console.log("before return ", title, animKind);
 

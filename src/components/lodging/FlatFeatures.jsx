@@ -1,10 +1,10 @@
 import PinkBox from '@components/general/PinkBox.jsx';
 import '@styles/FixedElements/PinkBox.css';
 
-function FlatFeatures({id, title, description}) {
+function FlatFeatures() {
     return(
         <>
-            <PinkBox title={title} description={description} />
+            <PinkBox title="Título de la caja" description="Description" />
         </>
     )
 }

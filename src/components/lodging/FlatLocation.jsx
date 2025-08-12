@@ -1,9 +1,9 @@
 import '@styles/Lodging.css';
 
-function FlatLocation({id, title}) {
+function FlatLocation({location}) {
     return(
         <>
-            <h3 className="lodgingLocation">Dónde está</h3>
+            <h3 className="lodgingLocation">{location}</h3>
         </>
     )
 }
