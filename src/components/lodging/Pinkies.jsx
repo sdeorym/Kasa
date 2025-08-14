@@ -1,9 +1,9 @@
 import '@styles/Lodging.css';
 
-function Pinkies() {
+function Pinkies({flatTags}) {
     return(
         <>
-            <span className="pinkyBoxy">Pink 1</span>
+            <span className="pinkyBoxy">{flatTags}</span>
         </>
     )
 }

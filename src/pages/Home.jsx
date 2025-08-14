@@ -23,9 +23,6 @@ function Home() {
   
   let experimento = 
     Logements.map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => {title});
-  console.log("experimento = ", experimento);
-
-
 
   return (
     <section className="homecoming">
@@ -35,8 +32,8 @@ function Home() {
             {kasaLots.flatMap((_, rowNumber) => (
                 <div className="firstAdds">                  
                     {kasaCards.slice(0, 1).flatMap((_,flatNumber) =>
-                    Logements.slice(rowNumber*3, (rowNumber*3+(flatNumber+3))).map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => (
-                      <Link to={`@pages/lodging/:${id}`} className="myLink"><Card title={title} /></Link>)
+                    Logements.slice(rowNumber*3, (rowNumber*3+(flatNumber+3))).map(({id, title, cover}, i) => (
+                      <Link to={`lodging/:${id}`} className="myLink"><Card title={title} cover={cover} /></Link>)
                       ))}
                 </div>
             ))}
@@ -44,9 +41,9 @@ function Home() {
         ) :
         <div className="firstAdds">
           {kasaCards.slice(0, 1).flatMap((_,flatNumber) =>
-            Logements.slice(0, 3).map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => (
+            Logements.slice(0, 3).map(({id, title, cover}, i) => (
               <Link to={`lodging/:${id}`} className="myLink">
-                <Card title={title} />
+                <Card title={title} cover={cover} />
               </Link>)))}
         </div>
       }

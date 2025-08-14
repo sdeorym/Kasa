@@ -1,10 +1,14 @@
 import '@styles/FixedElements/PinkBox.css';
 
 function CanvasAccordion({animKind, description}) {
-    return(
+
+return(
         <>
             <div className={"canvas " + animKind}>
-                <p className={"canvastext " + animKind}>{description}</p>
+                {(typeof description === "string") ? 
+                    (<p className={"canvastext " + animKind}>{description}</p>) : 
+                    (<ul className={"canvastext " + animKind}>
+                        {description.map((item, i) => (<li key={i}>{item}</li>))}</ul>)}                
             </div>
         </>
     )

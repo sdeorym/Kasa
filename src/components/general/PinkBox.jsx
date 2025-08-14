@@ -10,14 +10,11 @@ function PinkBox({title, description}) {
     useEffect(() => {                
         if (!isOpen) {
             setAnimKind("hideAnim");
-            console.log("hideAnim", title);
         }
         if (isOpen) {
             setAnimKind("displayAnim");
-            console.log("displayAnim", title);
         }
     },[isOpen]);
-    console.log("before return ", title, animKind);
 
     const handleClick = () => {
         setIsOpen(!isOpen)

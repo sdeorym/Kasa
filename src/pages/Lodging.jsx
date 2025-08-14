@@ -2,7 +2,7 @@ import '@styles/lodging.css';
 import Title from '@components/lodging/Title.jsx';
 import FlatLocation from '@components/lodging/FlatLocation.jsx';
 import Pinkies from '@components/lodging/Pinkies.jsx';
-import CityZone from '@components/lodging/CityZone.jsx';
+import CityHost from '@components/lodging/CityHost.jsx';
 import FlatFeatures from '@components/lodging/FlatFeatures.jsx';
 import Logements from '@assets/data/logements.js';
 import { useParams } from 'react-router-dom';
@@ -12,7 +12,6 @@ function Lodging() {
   let idx = params.id;
   let il=idx.length;
   idx = idx.slice(1, il);
-  console.log(idx);
   var lodging = Searching (idx, Logements);
  
   function Searching(datum, array) {
@@ -23,13 +22,14 @@ function Lodging() {
     }
     return null;
   }
-  console.log(lodging.title);
+  
   // Récupérer l'id via un useParams
   // Utiliser la méthode "find" sur le tableau JSON pour trouver la bonne entrée. 
   // Hint : utiliser un useEffect pour gérer le changement d'id
-  let flatTitle = lodging.title;
-  let location = lodging.location;
-   
+
+  let flatTags = lodging.tags;
+  let flatHost = lodging.host;
+  let lodgingFields = [{"Title": "Description", "Content": lodging.description}, {"Title": "Équipements", "Content": lodging.equipments}]; 
   //Hay que hacer una extracción de los tags mediante una función lambda
 
   return (
@@ -40,18 +40,17 @@ function Lodging() {
         <FlatLocation location={lodging.location} />
       </div>
       <div className = "pinkboxing">
-        <Pinkies />
+        {flatTags.map((flatTags) => <Pinkies flatTags = {flatTags} />)}         
       </div>        
       <span className = "flatData">
         <span className = "starlettes">Estrellitas</span>
         <span className = "zoneHost">
-          <CityZone />
-          <span>Foto host</span>
+          <CityHost />
         </span>
       </span>
       <div className="features">
-        <FlatFeatures title="Description" description="Vaya casa cojonuda hay aquí, papi." />
-        <FlatFeatures title="Équipements" />
+        {lodgingFields.map((issue) => <FlatFeatures title={issue.Title} description={issue.Content} />)}
+        
       </div>      
     </div>
   );
