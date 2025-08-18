@@ -1,9 +1,13 @@
 import '@styles/Lodging.css';
 
-function CityHost() {
+function CityHost({cityHost}) {
+    console.log({cityHost});
     return(
-        <>
-            <p>Ubi sum</p>
+        <>  
+            <span className="permahost">
+                <span class="permaname"><p>{cityHost.name}</p></span>
+                <img src={cityHost.picture} className="permaphoto"></img>
+            </span>
         </>
     )
 }

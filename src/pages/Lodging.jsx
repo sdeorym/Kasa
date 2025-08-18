@@ -28,29 +28,29 @@ function Lodging() {
   // Hint : utiliser un useEffect pour gérer le changement d'id
 
   let flatTags = lodging.tags;
-  let flatHost = lodging.host;
   let lodgingFields = [{"Title": "Description", "Content": lodging.description}, {"Title": "Équipements", "Content": lodging.equipments}]; 
-  //Hay que hacer una extracción de los tags mediante una función lambda
+  let cityHost=lodging.host;
 
   return (
     <div className="lodgingView">
-      <img src={lodging.cover}></img>
-      <div className = "titling">
-        <Title flatTitle = {lodging.title} />
-        <FlatLocation location={lodging.location} />
-      </div>
-      <div className = "pinkboxing">
-        {flatTags.map((flatTags) => <Pinkies flatTags = {flatTags} />)}         
-      </div>        
-      <span className = "flatData">
-        <span className = "starlettes">Estrellitas</span>
-        <span className = "zoneHost">
-          <CityHost />
-        </span>
+      <span className="photoLodging">
+        <img src={lodging.cover}></img>
       </span>
+      <div className="lodgeContent">
+        <div className = "titling">
+          <Title flatTitle = {lodging.title} />
+          <FlatLocation location={lodging.location} />
+          <span className = "pinkboxing">
+            {flatTags.map((flatTags) => <Pinkies flatTags = {flatTags} />)}
+          </span>
+        </div> 
+        <div className = "flatData">
+          <span className = "starlettes">Estrellitas</span>
+          <span><CityHost cityHost={cityHost} /></span>
+        </div>
+      </div>
       <div className="features">
-        {lodgingFields.map((issue) => <FlatFeatures title={issue.Title} description={issue.Content} />)}
-        
+        {lodgingFields.map((issue) => <FlatFeatures title={issue.Title} description={issue.Content} />)}        
       </div>      
     </div>
   );
