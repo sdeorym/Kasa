@@ -1,4 +1,5 @@
 import '@styles/lodging.css';
+import PhotoLodging from '@components/lodging/PhotoLodging.jsx';
 import Title from '@components/lodging/Title.jsx';
 import FlatLocation from '@components/lodging/FlatLocation.jsx';
 import Pinkies from '@components/lodging/Pinkies.jsx';
@@ -30,12 +31,12 @@ function Lodging() {
   let flatTags = lodging.tags;
   let lodgingFields = [{"Title": "Description", "Content": lodging.description}, {"Title": "Équipements", "Content": lodging.equipments}]; 
   let cityHost=lodging.host;
-
+  let lodgeCover = lodging.cover;
+  let lodgePictures = lodging.pictures;
+  
   return (
     <div className="lodgingView">
-      <span className="photoLodging">
-        <img src={lodging.cover}></img>
-      </span>
+      <PhotoLodging lodgeCover= {lodgeCover} lodgePictures={lodgePictures}/>
       <div className="lodgeContent">
         <div className = "titling">
           <Title flatTitle = {lodging.title} />

@@ -1,7 +1,6 @@
 import '@styles/Lodging.css';
 
 function CityHost({cityHost}) {
-    console.log({cityHost});
     return(
         <>  
             <span className="permahost">

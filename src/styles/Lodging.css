@@ -10,12 +10,39 @@
     line-height: 142.6%;    
     gap: 15px; 
 }
-.photoLodging img {
+.photoLodging {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 225px;    
+}
+.lodgeGallery {
     width: 100%;
     max-height: 225px;
     flex-shrink: 0;
     border-radius: 10px;
     align-self: center;
+    object-fit: cover;
+}
+.arrowing {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    filter: invert(1);
+    width: 32px;
+    height: 32px;
+    color: #FFF;
+}
+
+.arrowing.leftie {
+    left: 5px;
+}
+
+.arrowing.rightie {
+    right: 5px;
 }
 .lodgeContent {
     display: flex;
