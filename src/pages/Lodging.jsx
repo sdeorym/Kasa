@@ -3,6 +3,7 @@ import PhotoLodging from '@components/lodging/PhotoLodging.jsx';
 import Title from '@components/lodging/Title.jsx';
 import FlatLocation from '@components/lodging/FlatLocation.jsx';
 import Pinkies from '@components/lodging/Pinkies.jsx';
+import Starlettes from '@components/lodging/Starlettes.jsx';
 import CityHost from '@components/lodging/CityHost.jsx';
 import FlatFeatures from '@components/lodging/FlatFeatures.jsx';
 import Logements from '@assets/data/logements.js';
@@ -46,7 +47,7 @@ function Lodging() {
           </span>
         </div> 
         <div className = "flatData">
-          <span className = "starlettes">Estrellitas</span>
+          <span><Starlettes stars={lodging.rating} /></span>
           <span><CityHost cityHost={cityHost} /></span>
         </div>
       </div>

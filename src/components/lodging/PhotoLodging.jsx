@@ -5,32 +5,27 @@ import { useState, useEffect } from 'react';
 
 function PhotoLodging({lodgePictures}) {
     const limit = lodgePictures.length - 1;
-    let i=0;
-
     const [righty, setRighty] = useState(false);
     const [lefty, setLefty] = useState(false);
-    let [photo, setPhoto] = useState([]);
+    let [photo, setPhoto] = useState(0);
+    let goPhoto = lodgePictures[photo];
 
         useEffect(() => {                
         if (lefty) {
-            if (photo != 0) {
-                setPhoto(photo-=1)
-                }
-            else {
-                setPhoto(limit);
-                lodgePictures[limit];
-                return;
-            }
-            lodgePictures[i] = lodgePictures[photo];
-            return;}
+            if (photo == 0) {setPhoto(photo=limit);}
+            else {setPhoto(photo-=1)}
+            goPhoto = lodgePictures[photo];
+            return;}            
+            else return;
         },[lefty]);
 
         useEffect(() => {                
             if (righty) {
-                if (photo == limit) {setPhoto(0)}
-                else {setPhoto(photo+=1)}
-                lodgePictures[i] = lodgePictures[photo];
-            return;}
+                if (photo != limit) {setPhoto(photo+=1);}
+                else {setPhoto(0);}
+                goPhoto = lodgePictures[photo];
+                return;}
+            else return;
         },[righty]);
 
     const previousPhoto = () => {
@@ -39,8 +34,6 @@ function PhotoLodging({lodgePictures}) {
     const nextPhoto = () => {
         setRighty(!righty)
     };
-
-    let goPhoto = lodgePictures[i];
 
     return (
         <>  

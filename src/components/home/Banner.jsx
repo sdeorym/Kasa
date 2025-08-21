@@ -2,7 +2,7 @@ import '@styles/Home.css';
 
 function Banner() {
     return(
-        <div className="slogan">        
+        <div className="slogan">  
             <h1>Chez vous, partout et ailleurs</h1>
         </div>
     )
