@@ -29,7 +29,7 @@
     align-self: center;
     object-fit: cover;
 }
-.arrowing {
+button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -37,11 +37,19 @@
     width: 32px;
     height: 32px;
     color: #FFF;
+    border: none;
+    background-color: transparent;
+    z-index: 2100;
+    vertical-align: center;
+    align-self: center;
 }
-.arrowing.leftie {
+/*.arrowing {
+    
+}*/
+.leftie {
     left: 5px;
 }
-.arrowing.rightie {
+.rightie {
     right: 5px;
 }
 /***FLAT INFO ***/
@@ -172,14 +180,14 @@
         max-width: 1240px;
         max-height: 415px;
     }
-    .arrowing {
+    button {
         width: 46.68px;
         height: 79.2px;
     }
-    .arrowing.leftie {
+    .leftie {
         left: 10px;
     }
-    .arrowing.rightie {
+    .rightie {
         right: 10px;
     } 
     /***FLAT INFO ***/

@@ -12,7 +12,6 @@ function Starlettes({stars}) {
         else if (i>starlette && i<=5)
             {star.push("+");}
     }
-    console.log(star);
 
     return(
         <>
