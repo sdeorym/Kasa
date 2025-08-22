@@ -43,9 +43,6 @@ button {
     vertical-align: center;
     align-self: center;
 }
-/*.arrowing {
-    
-}*/
 .leftie {
     left: 5px;
 }
@@ -104,6 +101,7 @@ button {
     text-align: center;
     font-size: 10px;
     font-weight: 700;
+    padding-bottom: 4px;
 }
 /*** --NAME OF THE HOST, RATING-- ***/
 .flatData {
@@ -212,6 +210,7 @@ button {
         width: 115px;
         height: 25px;
         font-size: 14px;
+        padding-bottom: 0;
     }
     /*** --NAME OF THE HOST, RATING-- ***/
     .flatData {

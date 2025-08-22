@@ -4,8 +4,8 @@ import rightie from '@assets/LogosAndImages/right_arrow.png';
 import { useState, useEffect } from 'react';
 
 function PhotoLodging({lodgePictures}) {
-    const [image, setImage] = useState(lodgePictures[0])
-    const [imageIndex, setImageIndex] = useState(0)
+    const [image, setImage] = useState(lodgePictures[0]);
+    const [imageIndex, setImageIndex] = useState(0);
 
     /*  const limit = lodgePictures.length - 1;
         const [righty, setRighty] = useState(false);
@@ -59,8 +59,11 @@ function PhotoLodging({lodgePictures}) {
         <>  
             <span className="photoLodging">
                 <img className="lodgeGallery" src={image}></img>
-                <button onClick={goPrevious} className="leftie"><img src={leftie}></img></button>
-                <button onClick={goNext} className="rightie"><img src={rightie}></img></button>
+                {(lodgePictures.length > 1) ? 
+                (<span>
+                    <button onClick={goPrevious} className="leftie"><img src={leftie}></img></button>
+                    <button onClick={goNext} className="rightie"><img src={rightie}></img></button></span>)
+                : (<span></span>)}
                 
             </span>
         </>
