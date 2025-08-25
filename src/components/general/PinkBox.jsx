@@ -24,10 +24,8 @@ function PinkBox({title, description}) {
         <>
             <div className="extendable"> 
                 <span className="pinky">        
-                    <span className="arrowy">
-                        <h2>{title}</h2>
-                        <span className="arrowMe"><img src={arrowIcon} onClick={handleClick} className={`arrow ${animKind}`}></img></span>
-                    </span>            
+                    <h2 className="pinkTitle">{title}</h2>
+                    <span className="buttonArrow" onClick={handleClick}><img src={arrowIcon} className={`arrow ${animKind}`}></img></span>          
                 </span>
                 <span id="monAccordion"><CanvasAccordion title={title} description={description} animKind={animKind} /></span>
             </div>

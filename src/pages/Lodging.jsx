@@ -7,7 +7,7 @@ import Starlettes from '@components/lodging/Starlettes.jsx';
 import CityHost from '@components/lodging/CityHost.jsx';
 import FlatFeatures from '@components/lodging/FlatFeatures.jsx';
 import Logements from '@assets/data/logements.js';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 
 function Lodging() {
   let params = useParams();
@@ -15,6 +15,11 @@ function Lodging() {
   let il=idx.length;
   idx = idx.slice(1, il);
   var lodging = Searching (idx, Logements);
+  if (lodging == null)
+    {console.log("Vamos al 404");
+      return (<Navigate to='/error' />);
+    console.log("Tamos en 404?");
+  }
  
   function Searching(datum, array) {
     for (let i=0; i<array.length; i++) {
