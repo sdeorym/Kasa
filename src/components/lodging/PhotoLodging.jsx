@@ -63,8 +63,7 @@ function PhotoLodging({lodgePictures}) {
                 (<span>
                     <button onClick={goPrevious} className="leftie"><img src={leftie}></img></button>
                     <button onClick={goNext} className="rightie"><img src={rightie}></img></button></span>)
-                : (<span></span>)}
-                
+                : (<span></span>)}                
             </span>
         </>
     )

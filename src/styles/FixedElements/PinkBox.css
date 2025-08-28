@@ -35,26 +35,23 @@
 .buttonArrow {
     width: 32px;
     height: 32px;
-
+    align-content: middle;
+    vertical-align: middle;
+    margin-top: -5px;
 }
 .canvas {
     width: 100%;
     height: auto;
     display: none;    
 }
-/*.canvas:closed {
-    height: 0;
-    display:none;
-}*/
 .canvastext {
     color: #000;
     font-family: Montserrat;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 142.6%; /* 25.668px */
+    line-height: 142.6%; 
     padding: 15px 15px 15px 15px;
-    /*display: none;*/
 }
 .extendable {
     height: auto;
@@ -95,11 +92,9 @@
 }    
     @keyframes tumble {
         from {
-            /*display: none;*/
             opacity: 0;
             transform: translateY(0%);
         } to {
-            /*display: block;*/
             opacity: 1;
             transform: translateY(100%);
         }
@@ -135,33 +130,13 @@
 }
     @keyframes mount {
         from {
-            /*display: block;*/
             opacity: 1;
             transform: translateY(100%);
         } to {
-            /*display: none;*/
             opacity: 0;
             transform: translateY(0%);
         }
     }
-
-
-
-/*.openCanvas {
-    animation: opening ease-in-out forwards;
-}
-
-.shutCanvas {
-    animation: shutting ease-in-out forwards;
-}
-
-.dropDown {
-    animation: tumble ease-in-out forwards;
-}
-
-.climbUp {
-    animation: mount ease-in-out forwards;
-}*/
 
 /**************************************** MEDIA QUERIES ****************************************/
 
@@ -169,19 +144,19 @@
     .pinky {
         height: 54px;
     }
-    /*.arrowy {
-        margin-top: 7.5px;
-    }*/
     .pinkTitle {
         font-size: 24px;
     }
-    /*.canvas {
-        
-    }*/
     .canvastext  {
         font-size: 18px;
         padding: 20px 20px 20px 20px;
     }
+    .buttonArrow {
+        width: 32px;
+        height: 32px;
+        align-content: middle;
+        vertical-align: middle;
+        margin-top: 5px;
+        padding-right: 20px;
+    }
 }
-
-/* cubic-bezier(1, 0.25, 0.8, 0.25) */

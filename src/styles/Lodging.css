@@ -19,7 +19,10 @@
     align-items: center;
     width: 100%;
     max-height: 225px;
-    color: #FFF;    
+    height: 225px;
+    color: #FFF;
+    margin-bottom: 25px;
+    
 }
 .lodgeGallery {
     width: 100%;
@@ -43,6 +46,10 @@ button {
     vertical-align: center;
     align-self: center;
 }
+button img {
+    width: 24px;
+    height: 24px;
+}
 .leftie {
     left: 5px;
 }
@@ -51,45 +58,53 @@ button {
 }
 /***FLAT INFO ***/
 .lodgeContent {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 16px;    
+    gap: 16px;
+    margin-top: -45px;
 }
 /*** -TITLE, LOCATION, TAGS- ***/
 .titling {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 100%;
+    width: 100%;    
     gap: 5px;
 }
 .lodgingTitle {
     display: flex;
     width: 100%;
-    max-height: 46px;
+    height: 46px;
+    /*max-height: 46px;*/
+    font-weight: 500;
     flex-direction: column;
     justify-content: flex-end;
-    vertical-align: bottom;
+    vertical-align: text-bottom;
     font-size: 19px;
     flex-shrink: 0;
+    top: -25%;
     color: #FF6060;
 }
 .lodgingLocation {
     color: #000;
     font-size: 14px;
+    font-weight: 500;
     display: flex;
     width: 100%;
     height: 22px;
     flex-direction: column;
     justify-content: flex-end;
     flex-shrink: 0;
+    margin-top: -7.5px;
 }
 .pinkboxing {
     display: flex;
     flex-direction: row;
     align-self: flex-start;
     gap: 10px;
+    margin-top: -2.5px;
 }
 .pinkyBoxy {
     width: 84px;
@@ -116,7 +131,8 @@ button {
     height: 18px;
     flex-shrink: 0;
     align-self: flex-start;
-    vertical-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
 }
 .starlettes img {
     width: 18px;
@@ -126,19 +142,25 @@ button {
     display: flex;
     flex-direction: row;
     gap: 10.5px;
+    height: 33px;
+    position: relative;
 }
 .permaname {
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 93px;
     height: 33px;
+    font-weight: 500;
     justify-content: flex-end;
     flex-shrink: 0;
     color: #FF6060;
     text-align: right;
     font-size: 12px;
-    flex-wrap:wrap;
-    vertical-align: center;
+    overflow-wrap: wrap;
+    text-align: right;
+    left: -110px;
+    top: 5px;
 }
 .permaphoto {
     width: 32px;
@@ -172,37 +194,40 @@ button {
     }
     /** PHOTOS AND ARROWS **/
     .photoLodging {
-        max-height: 415px;
+        margin: 100px auto 30px auto;
     }
     .lodgeGallery {
         max-width: 1240px;
         max-height: 415px;
     }
-    button {
+    button img {
         width: 46.68px;
         height: 79.2px;
     }
     .leftie {
-        left: 10px;
+        left: 23.36px;
     }
     .rightie {
-        right: 10px;
+        right: 23.36px;
     } 
     /***FLAT INFO ***/
     .lodgeContent {
         flex-direction: row;
         justify-content: space-between;
+        padding-top: 85px;
         padding-bottom: 30px;
     }
     /*** -TITLE, LOCATION, TAGS- ***/   
     .titling {
         width: 75%;
+        gap: 0;
     }
     .lodgingTitle {
         font-size: 36px;
         height: 51px;
     }
     .lodgingLocation {
+        margin-top: -20px;
         font-size: 18px;
         height: 28px;
     }
@@ -211,6 +236,7 @@ button {
         height: 25px;
         font-size: 14px;
         padding-bottom: 0;
+        margin-top: 10px;
     }
     /*** --NAME OF THE HOST, RATING-- ***/
     .flatData {
@@ -219,9 +245,12 @@ button {
         justify-content: flex-end;
         vertical-align: bottom;
         margin-top: 50px;
+        /*left: -100%;*/
     }
     .permahost {
         gap: 10px;
+        margin-bottom: 40px;
+        left: 65%;
     }
     .permaname {
         font-size: 18px;
@@ -234,6 +263,7 @@ button {
     .starlettes {
         width: 196px;
         height: 36px;
+
     }
     .starlettes img {
         width: 36px;

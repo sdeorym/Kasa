@@ -44,7 +44,7 @@
     height: 255px;
     display: flex;
     align-items: flex-end; 
-    padding: 0px 0px 0px 0px; 
+    /*padding: 0px 0px 0px 0px; */
     box-sizing: border-box;
     flex-shrink: 0;
     border-radius: 10px;
@@ -60,13 +60,15 @@
 }
 .thumb h6 {
     position: absolute;
-    bottom: 10px;
+    /*bottom: 10px;*/
     left: 20px;
     color: #FFF;
     font-size: 18px;
     font-weight: 700;
     line-height: 142.6%;
-    width: 50%;
+    width: 88%;
+    /*top: -20%;*/
+    bottom: -6.5%;
 }
 .myLink {
     color: #FFF;

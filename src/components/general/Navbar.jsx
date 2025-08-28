@@ -14,8 +14,8 @@ function Navbar() {
                 <img src={logoS} alt='Logo kasa' className="logoS"></img>
                 <img src={logoL} alt='Logo kasa' className="logoL"></img>
                 <span className="pageIndex">
-                    <Link to="/" className={isHome ? "activePage" : "navlinks"}>Accueil</Link>
-                    <Link to="/about" className={isAbout ? "activePage" : "navlinks"}>À propos</Link>
+                    <Link to="/" className={isHome ? "homeLink activePage" : "homeLink navlinks"}>Accueil</Link>
+                    <Link to="/about" className={isAbout ? "aboutLink activePage" : "aboutLink navlinks"}>À propos</Link>
                 </span>
             </nav>            
         </div>
