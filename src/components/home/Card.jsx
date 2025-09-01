@@ -5,7 +5,7 @@ function Card({title, cover}) {
         <>
             <div className="thumb">
                 <h6>{title}</h6>
-                <img src={cover}></img>
+                <img src={cover} alt={title}></img>
                 
             </div>
         </>        

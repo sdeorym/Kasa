@@ -13,7 +13,6 @@
     mix-blend-mode: darken;
     border-radius: 10px;
     border: 1px solid #000;
-    align-items: left;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), /* this darkens the image */
         url('src/assets/LogosAndImages/image_about.png') center/cover no-repeat;    

@@ -17,7 +17,7 @@ function Starlettes({stars}) {
         <>
             <span className="starlettes">
                 {star.map((item) => 
-                    (item == "*") ? (<span><img src={pinkStar}></img></span>) : (<span><img src={grayStar}></img></span>)
+                    (item == "*") ? (<span><img src={pinkStar} alt="*"></img></span>) : (<span><img src={grayStar} alt=" "></img></span>)
                 )}
             </span>
         </>

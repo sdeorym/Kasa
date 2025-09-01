@@ -5,7 +5,7 @@ import FlatLocation from '@components/lodging/FlatLocation.jsx';
 import Pinkies from '@components/lodging/Pinkies.jsx';
 import Starlettes from '@components/lodging/Starlettes.jsx';
 import CityHost from '@components/lodging/CityHost.jsx';
-import FlatFeatures from '@components/lodging/FlatFeatures.jsx';
+import AccordionBox from '@components/general/AccordionBox.jsx';
 import Logements from '@assets/data/logements.js';
 import { useParams, Navigate } from 'react-router-dom';
 
@@ -16,10 +16,7 @@ function Lodging() {
   idx = idx.slice(1, il);
   var lodging = Searching (idx, Logements);
   if (lodging == null)
-    {console.log("Vamos al 404");
-      return (<Navigate to='/error' />);
-    console.log("Tamos en 404?");
-  }
+    {return (<Navigate to='/error' />);}
  
   function Searching(datum, array) {
     for (let i=0; i<array.length; i++) {
@@ -30,10 +27,6 @@ function Lodging() {
     return null;
   }
   
-  // Récupérer l'id via un useParams
-  // Utiliser la méthode "find" sur le tableau JSON pour trouver la bonne entrée. 
-  // Hint : utiliser un useEffect pour gérer le changement d'id
-
   let flatTags = lodging.tags;
   let lodgingFields = [{"Title": "Description", "Content": lodging.description}, {"Title": "Équipements", "Content": lodging.equipments}]; 
   let cityHost=lodging.host;
@@ -42,12 +35,12 @@ function Lodging() {
   
   return (
     <div className="lodgingView">
-      <PhotoLodging lodgeCover= {lodgeCover} lodgePictures={lodgePictures}/>
+      <PhotoLodging lodgeTitle={lodging.title} lodgeCover={lodgeCover} lodgePictures={lodgePictures}/>
       <div className="lodgeContent">
         <div className = "titling">
           <Title flatTitle = {lodging.title} />
           <FlatLocation location={lodging.location} />
-          <span className = "pinkboxing">
+          <span className = "AccordionBoxing">
             {flatTags.map((flatTags) => <Pinkies flatTags = {flatTags} />)}
           </span>
         </div> 
@@ -57,7 +50,7 @@ function Lodging() {
         </div>
       </div>
       <div className="features">
-        {lodgingFields.map((issue) => <FlatFeatures title={issue.Title} description={issue.Content} />)}        
+        {lodgingFields.map((issue) => <AccordionBox title={issue.Title} description={issue.Content} />)}        
       </div>      
     </div>
   );

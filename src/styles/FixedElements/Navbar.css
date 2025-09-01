@@ -23,7 +23,6 @@
     font-weight: 500;
     font-size: 12px;
     padding: 15.94px 0; 
-
 }
 .homelink {
     width: 55px;    
@@ -36,7 +35,7 @@
     height: 17px;
     color: #000;
 }
-.navlinks:hover, .navlinks:active  {
+.navlinks:hover, .navlinks:active {
     text-decoration: underline;
     color: #000;
 }

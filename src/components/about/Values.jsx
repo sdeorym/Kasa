@@ -1,10 +1,10 @@
-import PinkBox from '@components/general/PinkBox.jsx';
-import '@styles/FixedElements/PinkBox.css';
+import AccordionBox from '@components/general/AccordionBox.jsx';
+import '@styles/FixedElements/AccordionBox.css';
 
 function Values({id, title, description}) {
     return(
         <>
-            <PinkBox title={title} description={description} />
+            <AccordionBox title={title} description={description} />
         </>
     )
 }

@@ -1,9 +1,9 @@
-import '@styles/FixedElements/PinkBox.css';
+import '@styles/FixedElements/AccordionBox.css';
 import arrowIcon from '@assets/LogosAndImages/arrow.png';
 import CanvasAccordion from '@components/general/CanvasAccordion.jsx';
 import { useState, useEffect } from 'react';
 
-function PinkBox({title, description}) {
+function AccordionBox({title, description}) {
     const [isOpen, setIsOpen] = useState(false);
     const [animKind, setAnimKind] = useState("hideAnim");
 
@@ -23,14 +23,14 @@ function PinkBox({title, description}) {
     return(
         <>
             <div className="extendable"> 
-                <span className="pinky">        
+                <div className="pinky">        
                     <h2 className="pinkTitle">{title}</h2>
-                    <span className="buttonArrow" onClick={handleClick}><img src={arrowIcon} className={`arrow ${animKind}`}></img></span>          
-                </span>
-                <span id="monAccordion"><CanvasAccordion title={title} description={description} animKind={animKind} /></span>
+                    <button onClick={handleClick}><img src={arrowIcon} className={`arrow ${animKind}`} alt="PRESS HERE"></img></button>
+                </div>
+                <div className="monAccordion"><CanvasAccordion title={title} description={description} animKind={animKind} /></div>
             </div>
         </>
         )
 }
 
-export default PinkBox;
+export default AccordionBox;

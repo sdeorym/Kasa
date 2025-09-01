@@ -1,4 +1,4 @@
-import '@styles/FixedElements/PinkBox.css';
+import '@styles/FixedElements/AccordionBox.css';
 
 function CanvasAccordion({animKind, description}) {
 

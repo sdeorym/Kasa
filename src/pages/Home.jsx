@@ -3,7 +3,7 @@ import Banner from '@components/home/Banner.jsx';
 import Card from '@components/home/Card.jsx';
 import Logements from '@assets/data/logements.js';
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Home() {
 

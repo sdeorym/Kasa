@@ -17,18 +17,16 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 143%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     width: 133.59px;
     height: 46px;
     text-align: center;
     align-self: center;
     vertical-align: text-bottom;    
-
 }
 @media (min-width: 767px) {
     .copyright {
         width: 513px;
-        /*top: 134px;
-        left: 463px;*/
+        font-size: 24px;
     }
 }

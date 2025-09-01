@@ -1,5 +1,5 @@
 import arrowIcon from '@assets/LogosAndImages/arrow.png';
-import '@styles/FixedElements/PinkBox.css';
+import '@styles/FixedElements/AccordionBox.css';
 
 function ArrowButton( {animKind}) {
     return(
