@@ -4,7 +4,6 @@ import grayStar from '@assets/LogosAndImages/gray_star.png';
 
 function Starlettes({stars}) {
     let starlette = parseInt(stars);
-    let minus = 5 - starlette;
     let star = [];
     for (let i=1; i<= 5; i+=1){
         if (i<=starlette)

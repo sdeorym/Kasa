@@ -6,14 +6,13 @@ import { useState, useEffect } from 'react';
 function PhotoLodging({lodgeTitle, lodgePictures}) {
     const [image, setImage] = useState(lodgePictures[0]);
     const [imageIndex, setImageIndex] = useState(0);
-
+    
+    // Attention: state updates after the function (goNext or goPrevious).
     function goNext() {
-        // Attention le state se met à jour APRES la fonction
         setImageIndex(imageIndex === lodgePictures.length - 1 ? 0 : imageIndex + 1)
     }
 
     function goPrevious() {
-        // Attention le state se met à jour APRES la fonction
         setImageIndex(imageIndex === 0 ?   lodgePictures.length - 1 : imageIndex - 1 )
     }
 

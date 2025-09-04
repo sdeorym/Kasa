@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Home() {
-
-  const kasaCards = [0, 1, 2];
   const kasaLots = [0, 1];
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -21,30 +19,27 @@ function Home() {
     // Cleaning Up
     return () => window.removeEventListener('resize', handleResize);}, []);
   
-  let experimento = 
-    Logements.map(({id, title, cover, pictures, description, host, rating, location, equipments}, i) => {title});
-
   return (
     <section className="homecoming">
       <Banner />
       {window.innerWidth > 766 ? (       
-          <span className="second">
-            {kasaLots.flatMap((_, rowNumber) => (
+          <div className="second">
+            {kasaLots.flatMap((rowNumber) => (
                 <div className="firstAdds">                  
-                    {kasaCards.slice(0, 1).flatMap((_,flatNumber) =>
-                    Logements.slice(rowNumber*3, (rowNumber*3+(flatNumber+3))).map(({id, title, cover}, i) => (
-                      <Link to={`lodging/:${id}`} className="myLink"><Card title={title} cover={cover} /></Link>)
-                      ))}
+                    {Logements.slice((rowNumber*3), ((rowNumber+1)*3)).map(({id, title, cover}, i) => (
+                        <Link to={`lodging/:${id}`} className="myLink">
+                          <Card title={title} cover={cover} />
+                        </Link>)
+                        )}
                 </div>
             ))}
-          </span>
+          </div>
         ) :
         <div className="firstAdds">
-          {kasaCards.slice(0, 1).flatMap((_,flatNumber) =>
-            Logements.slice(0, 3).map(({id, title, cover}, i) => (
+          {Logements.slice(0, 3).map(({id, title, cover}, i) => (
               <Link to={`lodging/:${id}`} className="myLink">
                 <Card title={title} cover={cover} />
-              </Link>)))}
+              </Link>))}
         </div>
       }
     </section>

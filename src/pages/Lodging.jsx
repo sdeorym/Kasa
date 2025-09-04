@@ -13,11 +13,11 @@ function Lodging() {
   let params = useParams();
   let idx = params.id;
   let il=idx.length;
+  //We slice to delete leading colon in the search.
   idx = idx.slice(1, il);
   var lodging = Searching (idx, Logements);
   if (lodging == null)
     {return (<Navigate to='/error' />);}
- 
   function Searching(datum, array) {
     for (let i=0; i<array.length; i++) {
       if (datum == array[i].id) {
@@ -26,7 +26,6 @@ function Lodging() {
     }
     return null;
   }
-  
   let flatTags = lodging.tags;
   let lodgingFields = [{"Title": "Description", "Content": lodging.description}, {"Title": "Équipements", "Content": lodging.equipments}]; 
   let cityHost=lodging.host;

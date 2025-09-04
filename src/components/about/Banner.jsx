@@ -2,7 +2,7 @@ import '@styles/About.css';
 
 function Banner() {
     return(
-        <div className="bannerPhoto">        
+        <div className="bannerPhoto">
         </div>
     )
 }
