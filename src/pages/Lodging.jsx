@@ -1,4 +1,4 @@
-import '@styles/lodging.css';
+import '@styles/Lodging.css';
 import PhotoLodging from '@components/lodging/PhotoLodging.jsx';
 import Title from '@components/lodging/Title.jsx';
 import FlatLocation from '@components/lodging/FlatLocation.jsx';
