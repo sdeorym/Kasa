@@ -1,0 +1,162 @@
+.navBarEnvironment {
+    width: 89.33%;
+    height: 46.88px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+.logoS {
+    display: block;
+    width: 145px;
+}
+.logoL {
+    display: none;
+}
+.pageIndex {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    gap: 26px;
+    right: 0%;
+    justify-content: flex-end;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 15.94px 0; 
+}
+.homelink {
+    width: 55px;    
+}
+.aboutLink {
+    width: 66px;
+}
+.navlinks {
+    text-decoration: none;
+    height: 17px;
+    color: #000;
+}
+.navlinks:hover, .navlinks:active {
+    text-decoration: underline;
+    color: #000;
+}
+.activePage {
+    text-decoration: underline;
+    color: #000;
+}
+.footerEnvironment {
+    height: 209px;
+    width: 100%;
+    background-color: #000;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.logoBlack {
+    width: 122px;
+    height: 39.44px;
+    align-self: center;
+    margin-top: 66px;    
+}
+.copyright{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 143%;
+    letter-spacing: 0;
+    width: 133.59px;
+    height: 46px;
+    text-align: center;
+    align-self: center;
+    vertical-align: text-bottom;    
+}
+.slogan {
+    width: 100%;
+    height: 111px;
+    border-radius: 10px;
+    border: 1px solid #000;        
+}
+.slogan img {
+    filter: brightness(50%);
+    width: 100%;
+    height: 111px;    
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.slogan h1 {
+    position: absolute;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    width: 225px;
+    height: 48px;
+    opacity: 1;
+    text-align: left;
+    vertical-align: middle;
+    position: absolute;
+    z-index: 10;
+    margin: -87.5px 94px 0px 16px; 
+}
+
+@media (min-width: 767px) {
+    .navBarEnvironment {
+        width: 86%;
+        height: 68px;
+        max-width: 1240px;
+        margin: 50px 6.94%;
+    }
+    .logoS {
+        display: none;
+    }
+    .logoL {
+        display: block;
+        width: 210.32px;
+        height: 100%;
+    }
+    .pageIndex {
+        text-transform: capitalize;
+        padding: 17px 0;
+        font-size: 24px; 
+        gap: 57px;
+    }
+    .homelink {
+        width: 136px;    
+    }
+    .aboutLink {
+        width: 116px;
+    }
+    .navlinks {
+        text-decoration: none;
+        height: 34px;
+        color: #000;
+    }
+    .copyright {
+        width: 513px;
+        font-size: 24px;
+    }
+    .slogan {
+        width: 100%;
+        max-width: 1240px;
+        height: 223px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slogan img {
+        width: 100%;
+        height: 223px;
+    }
+    .slogan h1 {
+        font-size: 48px;
+        text-align: center;
+        line-height: 143%;
+        width: 59.11%;
+        height: 68px;
+        text-shadow: 1px 1px 2px black;
+        white-space: nowrap;
+        margin: 0px;
+    }
+}

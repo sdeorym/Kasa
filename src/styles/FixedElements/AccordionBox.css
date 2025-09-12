@@ -24,10 +24,8 @@
     vertical-align: middle;
 }
 .pinky h2 {
-    font-family: Montserrat;
     color: #FFF;
     font-size: 13px;
-    font-style: normal;
     font-weight: 700;
     line-height: 142.6%;
     position:relative;
@@ -52,9 +50,7 @@
 }
 .canvastext {
     color: #000;
-    font-family: Montserrat;
     font-size: 12px;
-    font-style: normal;
     font-weight: 400;
     line-height: 142.6%; 
     padding: 15px 15px 15px 15px;
@@ -68,8 +64,9 @@
 
 /**************************************** ANIMATIONS ****************************************/
     /*** BOX OPENS, TEXT APPEARS ***/
-.arrow.displayAnim {
-    animation: counter-clockwise 0.5s ease-in-out 0s forwards;        
+/*** ROTATING ARROWS ***/
+    .arrow.displayAnim {
+    animation: counter-clockwise 0.5s ease-in-out forwards;        
 }
     @keyframes counter-clockwise {
         from { 
@@ -78,33 +75,6 @@
             transform: rotate(-180deg);             
         }        
     }
-.canvas.displayAnim {
-    display: block;
-    animation: opening 1s ease-in-out 1.5s forwards;
-}    
-    @keyframes opening {
-        from {
-            display: none;
-            transform: translateY(0px);
-        } to {
-            display: block;
-            transform: translateY(100%);
-        }
-    }
-.canvastext.displayAnim{
-    display: block;
-    animation: tumble 1s ease-in 5s forwards;
-}    
-    @keyframes tumble {
-        from {
-            opacity: 0;
-            transform: translateY(0%);
-        } to {
-            opacity: 1;
-            transform: translateY(100%);
-        }
-    }
-
 .arrow.hideAnim {
     animation: clockwise 0.5s ease-in-out forwards;        
 }
@@ -114,33 +84,68 @@
         } to { 
             transform: rotate(0deg); }
     }
+/*** CANVAS OPENS TO SHOW THE TEXT ***/
+.canvas.displayAnim {
+    display: block;
+    animation: opening 0.75s ease-in-out forwards;
+}    
+    @keyframes opening {
+        from {
+            opacity:0;
+            transform: translateY(0px);
+        } to {
+            opacity: 1;
+            transform: translateY(100%);
+        }
+    }
 .canvas.hideAnim  {
-    animation: shutting 1s ease-in-out 1.5s forwards;
+    animation: shutting 1s ease-in-out forwards;
+    animation-delay: 5s;
     display: none;
 }
     @keyframes shutting {
-        from {
-            display: block;
-            transform: translateY(100%);
-            opacity: 1;
-        } to {
-            display: none;
-            transform: translateY(0%);
-            opacity: 0;           
+        0% {
+            transform: translateY(-95%);
+        }
+        25% {
+            transform: translateY(-96.5%);
+        }
+        50% {
+            transform: translateY(-98%);
+        }
+        75% {            
+            transform: translateY(-100%);
+        }
+        100% {
+            opacity:0;
         }
     }
+
+.canvastext.displayAnim{
+    display: block;
+    animation: tumble 0.75s ease-in forwards;
+}    
+    @keyframes tumble {
+        from {
+            opacity: 0;
+            transform: translateY(-100%);
+        } to {
+            opacity: 1;
+            transform: translateY(-99%);
+        }
+    }
+
 .canvastext.hideAnim  {
-    animation: mount 1s ease-in 0s forwards;
+    animation: mount 2s ease-in 0s forwards;
+    
     display: none;
 }
     @keyframes mount {
-        from {
-            opacity: 1;
-            transform: translateY(100%);
+        0% {
+            transform: translateY(-95%);
         } to {
-            opacity: 0;
-            transform: translateY(0%);
-        }
+            transform: translateY(-100%);
+            opacity: 0;}
     }
 
 /**************************************** MEDIA QUERIES ****************************************/

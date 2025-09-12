@@ -1,7 +1,11 @@
-import Banner from '@components/about/Banner.jsx';
+import '@styles/About.css';
+import Banner from '@components/general/Banner.jsx';
 import Values from '@components/about/Values.jsx';
+import photoBanner from '@assets/LogosAndImages/image_about.png';
+
 
 function About() {
+  const slogan=["", photoBanner]
   const values = [
     {
 		  "id": "0",
@@ -26,7 +30,7 @@ function About() {
   ]
   return (
     <section className="whataboutism">
-      <Banner />
+      <Banner bannerSlogan={slogan[0]} bannerPhoto={slogan[1]} />
       <div className="kasaValues">
         {values.map((e) => 
           <Values id={e.id} title={e.title} description={e.description} />)}

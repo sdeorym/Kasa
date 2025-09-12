@@ -5,18 +5,6 @@
     margin: 27px auto 27px auto;
     align-self: center;
     gap: 19px;
-    font-family: Montserrat;
-}
-.bannerPhoto {
-    width: 100%;
-    height: 111px;
-    mix-blend-mode: darken;
-    border-radius: 10px;
-    border: 1px solid #000;
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), /* this darkens the image */
-        url('../assets/LogosAndImages/image_about.png') center/cover no-repeat;    
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
 }
 .kasaValues {
     display: flex;
@@ -31,9 +19,10 @@
 
 @media (min-width: 767px) {
     .whataboutism {
-        width: 100%;
-        max-width: 1440px;
+        width: 86.11%;
+        max-width: 1240px;
         gap: 30px;
+        margin: 50 auto;
     }
     .bannerPhoto {
         width: 86%;
