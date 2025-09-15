@@ -22,14 +22,15 @@ function PhotoLodging({lodgeTitle, lodgePictures}) {
 
     return (
         <>  
-            <span className="photoLodging">
+            <div className="photoLodging">
                 <img className="lodgeGallery" src={image} alt={lodgeTitle}></img>
                 {(lodgePictures.length > 1) ? 
                 (<span>
                     <button onClick={goPrevious} className="leftie"><img src={leftie} alt="=>"></img></button>
                     <button onClick={goNext} className="rightie"><img src={rightie} alt="<="></img></button></span>)
-                : (<span></span>)}                
-            </span>
+                : (<span></span>)}
+                <span className="red">{imageIndex+1} / {lodgePictures.length}</span>                
+            </div>
         </>
     )
 }

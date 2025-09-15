@@ -87,7 +87,7 @@
 /*** CANVAS OPENS TO SHOW THE TEXT ***/
 .canvas.displayAnim {
     display: block;
-    animation: opening 0.75s ease-in-out forwards;
+    animation: opening 1s ease-in-out forwards;
 }    
     @keyframes opening {
         from {
@@ -123,27 +123,27 @@
 
 .canvastext.displayAnim{
     display: block;
-    animation: tumble 0.75s ease-in forwards;
+    animation: tumble 0.25s ease-in forwards;
 }    
     @keyframes tumble {
         from {
             opacity: 0;
-            transform: translateY(-100%);
+            transform: translateY(0%);
         } to {
             opacity: 1;
-            transform: translateY(-99%);
+            transform: translateY(-105%);
         }
     }
 
 .canvastext.hideAnim  {
-    animation: mount 2s ease-in 0s forwards;
+    animation: mount 2s ease-in forwards;
     
     display: none;
 }
     @keyframes mount {
         0% {
             transform: translateY(-95%);
-        } to {
+        } 100% {
             transform: translateY(-100%);
             opacity: 0;}
     }
