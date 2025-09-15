@@ -73,6 +73,7 @@
         flex-direction: row;
         gap: 55px;
         margin: 55px;
+        flex-wrap: wrap;
     }
     .second {
         display: block;

@@ -24,27 +24,12 @@ function Home() {
   return (
     <section className="homecoming">
       <Banner bannerSlogan={slogan[0]} bannerPhoto={slogan[1]} />
-
-      {window.innerWidth > 766 ? (       
-          <div className="second">
-            {kasaLots.flatMap((rowNumber) => (
-                <div className="firstAdds">                  
-                    {Logements.slice((rowNumber*3), ((rowNumber+1)*3)).map(({id, title, cover}, i) => (
-                        <Link to={`lodging/:${id}`} className="myLink">
-                          <Card title={title} cover={cover} />
-                        </Link>)
-                        )}
-                </div>
-            ))}
-          </div>
-        ) :
-        <div className="firstAdds">
-          {Logements.slice(0, 3).map(({id, title, cover}, i) => (
-              <Link to={`lodging/:${id}`} className="myLink">
-                <Card title={title} cover={cover} />
-              </Link>))}
-        </div>
-      }
+      <div className="firstAdds">
+        {Logements.map(({id, title, cover}, i) => (
+            <Link to={`lodging/:${id}`} className="myLink">
+              <Card title={title} cover={cover} />
+            </Link>))}
+      </div>
     </section>
   );
 }
