@@ -172,7 +172,7 @@ button img {
     font-size: 12px;
     font-weight: 500;
 }
-.red {
+.photoCounter {
     display: none;
 }
 /**** EXCLUSIVE FEATURES ****/
@@ -270,7 +270,7 @@ button img {
         width: 36px;
         height: 36px;
     }
-    .photoLodging .red {
+    .photoLodging .photoCounter {
         display:block;
         position: absolute;
         font-size: 25px;
@@ -281,7 +281,7 @@ button img {
         font-weight: 500;
         font-size: 18px;
         line-height: 143%;
-        letter-spacing: 0%;
+        letter-spacing: 0px;
         text-align: center;
 
     }

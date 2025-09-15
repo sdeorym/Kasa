@@ -33,7 +33,7 @@
     height: 255px;
     object-fit: cover;
 }
-.thumb h6 {
+.thumb h2 {
     position: absolute;
     left: 20px;
     color: #FFF;
@@ -41,7 +41,6 @@
     font-weight: 700;
     line-height: 142.6%;
     width: 88%;
-    bottom: -26.94px;
 }
 .myLink {
     color: #FFF;
