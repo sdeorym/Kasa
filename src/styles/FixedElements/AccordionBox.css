@@ -2,7 +2,6 @@
     width: 90%;
     height: 90%;
     margin-top: 5px;
-    display: block;  
 }
 .extendable {
     width: 92.5%;
@@ -45,15 +44,16 @@
 }
 .canvas {
     width: 100%;
-    height: auto;
-    display: none;    
+    max-height: 0;
+    overflow: hidden;
 }
 .canvastext {
     color: #000;
     font-size: 12px;
     font-weight: 400;
     line-height: 142.6%; 
-    padding: 15px 15px 15px 15px;
+    padding: 10px;
+    /*opacity: 0;*/
 }
 .extendable {
     height: auto;
@@ -65,87 +65,60 @@
 /**************************************** ANIMATIONS ****************************************/
     /*** BOX OPENS, TEXT APPEARS ***/
 /*** ROTATING ARROWS ***/
-    .arrow.displayAnim {
+.arrow.displayAnim {
     animation: counter-clockwise 0.5s ease-in-out forwards;        
 }
     @keyframes counter-clockwise {
-        from { 
-            transform: rotate(0deg); 
-        } to { 
-            transform: rotate(-180deg);             
-        }        
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-180deg); }        
     }
 .arrow.hideAnim {
     animation: clockwise 0.5s ease-in-out forwards;        
 }
     @keyframes clockwise {
-        from { 
-            transform: rotate(-180deg); 
-        } to { 
-            transform: rotate(0deg); }
+        from { transform: rotate(-180deg); } 
+        to { transform: rotate(0deg); }
     }
 /*** CANVAS OPENS TO SHOW THE TEXT ***/
 .canvas.displayAnim {
-    display: block;
-    animation: opening 1s ease-in-out forwards;
+    animation: openCanvas 1.2s ease forwards;    
 }    
-    @keyframes opening {
+    @keyframes openCanvas {
         from {
-            opacity:0;
-            transform: translateY(0px);
+            max-height: 0;
+            opacity: 0;
         } to {
-            opacity: 1;
-            transform: translateY(100%);
+            max-height: 600px;
+            opacity: 1;            
         }
     }
 .canvas.hideAnim  {
-    animation: shutting 1s ease-in-out forwards;
-    animation-delay: 5s;
-    display: none;
+    animation: closeCanvas 0.25s ease forwards;
 }
-    @keyframes shutting {
-        0% {
-            transform: translateY(-95%);
-        }
-        25% {
-            transform: translateY(-96.5%);
-        }
-        50% {
-            transform: translateY(-98%);
-        }
-        75% {            
-            transform: translateY(-100%);
-        }
-        100% {
-            opacity:0;
+    @keyframes closeCanvas {
+        from {
+            max-height: 750px;
+            opacity: 1;
+        } to {
+            opacity: 0;
+            height: 0;
         }
     }
 
 .canvastext.displayAnim{
-    display: block;
-    animation: tumble 0.25s ease-in forwards;
+    animation: textDown 1.2s ease forwards;
 }    
-    @keyframes tumble {
-        from {
-            opacity: 0;
-            transform: translateY(0%);
-        } to {
-            opacity: 1;
-            transform: translateY(-105%);
-        }
+    @keyframes textDown {
+        from { opacity: 0; transform: translateY(-60%); }
+        to { opacity: 1; transform: translateY(5%); }
     }
 
 .canvastext.hideAnim  {
-    animation: mount 2s ease-in forwards;
-    
-    display: none;
+    animation: textUp 0.25s ease forwards;
 }
-    @keyframes mount {
-        0% {
-            transform: translateY(-95%);
-        } 100% {
-            transform: translateY(-100%);
-            opacity: 0;}
+    @keyframes textUp {
+        from { opacity: 1; transform: translateY(5%);}
+        to { opacity: 0; transform: translateY(-15%); }
     }
 
 /**************************************** MEDIA QUERIES ****************************************/

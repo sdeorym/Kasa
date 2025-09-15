@@ -72,7 +72,7 @@
     .firstAdds {
         flex-direction: row;
         gap: 55px;
-        margin: 55px;
+        margin: 55px 48px;
         flex-wrap: wrap;
     }
     .second {
