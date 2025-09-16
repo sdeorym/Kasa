@@ -5,7 +5,7 @@ import FlatLocation from '@components/lodging/FlatLocation.jsx';
 import Pinkies from '@components/lodging/Pinkies.jsx';
 import Starlettes from '@components/lodging/Starlettes.jsx';
 import CityHost from '@components/lodging/CityHost.jsx';
-import AccordionBox from '@components/general/AccordionBox.jsx';
+import AccordionBox from '@components/accordion/AccordionBox.jsx';
 import Logements from '@assets/data/logements.js';
 import { useParams, Navigate } from 'react-router-dom';
 

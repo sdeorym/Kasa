@@ -1,8 +1,7 @@
 import '@styles/About.css';
 import Banner from '@components/general/Banner.jsx';
-import Values from '@components/about/Values.jsx';
+import AccordionBox from '@components/accordion/AccordionBox.jsx';
 import photoBanner from '@assets/LogosAndImages/image_about.png';
-
 
 function About() {
   const slogan=["", photoBanner]
@@ -33,7 +32,7 @@ function About() {
       <Banner bannerSlogan={slogan[0]} bannerPhoto={slogan[1]} />
       <div className="kasaValues">
         {values.map((e) => 
-          <Values id={e.id} title={e.title} description={e.description} />)}
+          <AccordionBox title={e.title} description={e.description} />)}
       </div>
     </section>
   );

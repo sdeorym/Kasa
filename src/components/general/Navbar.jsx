@@ -1,4 +1,4 @@
-import '@styles/FixedElements/General.css';
+import '@styles/General.css';
 import { Link, useLocation } from "react-router-dom";
 import logoS from '@assets/LogosAndImages/logo_small.png';
 import logoL from '@assets/LogosAndImages/logo_large.png';

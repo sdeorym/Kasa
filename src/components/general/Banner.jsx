@@ -1,4 +1,4 @@
-import '@styles/FixedElements/General.css';
+import '@styles/General.css';
 
 function Banner({bannerSlogan, bannerPhoto}) {
     return(

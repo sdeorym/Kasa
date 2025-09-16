@@ -1,6 +1,6 @@
-import '@styles/FixedElements/AccordionBox.css';
+import '@styles/AccordionBox.css';
 import arrowIcon from '@assets/LogosAndImages/arrow.png';
-import CanvasAccordion from '@components/general/CanvasAccordion.jsx';
+import CanvasAccordion from '@components/accordion/CanvasAccordion.jsx';
 import { useState, useEffect } from 'react';
 
 function AccordionBox({title, description}) {
