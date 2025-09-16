@@ -27,9 +27,11 @@ function PhotoLodging({lodgeTitle, lodgePictures}) {
                 {(lodgePictures.length > 1) ? 
                 (<span>
                     <button onClick={goPrevious} className="leftie"><img src={leftie} alt="=>"></img></button>
-                    <button onClick={goNext} className="rightie"><img src={rightie} alt="<="></img></button></span>)
+                    <button onClick={goNext} className="rightie"><img src={rightie} alt="<="></img></button>
+                    <span className="photoCounter">{imageIndex+1} / {lodgePictures.length}</span>
+                </span>)
                 : (<span></span>)}
-                <span className="photoCounter">{imageIndex+1} / {lodgePictures.length}</span>                
+                                
             </div>
         </>
     )
