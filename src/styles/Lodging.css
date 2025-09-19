@@ -191,6 +191,7 @@ button img {
     .lodgingView {
         width: 86.11%;
         max-width: 1240px;
+        align-self: center;
         margin: 50px auto 50px auto;
         gap: 0px;
     }
